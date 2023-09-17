@@ -5,7 +5,7 @@ const app = express();
 
 const corsOptions = {
   origin: 'http://localhost:5173',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  methods: ['GET', 'POST', 'DELETE'],
   credentials: true, // Include cookies in CORS requests if needed
   optionsSuccessStatus: 204, // Return a 204 status code for preflight requests
 };
@@ -16,7 +16,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/todo-app")
+  .connect("mongodb+srv://akashdeydev:nDt7KGJKAt6R7T8h@todocluster.gvy5uvn.mongodb.net/")
   .then(() => {
     console.log("Db Connected");
   })
