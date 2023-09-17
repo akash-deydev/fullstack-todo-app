@@ -10,7 +10,7 @@ function App() {
 
   const AddTask = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:3002/", {
+    await fetch("https://fullstack-todo-app-api-pi.vercel.app", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +22,7 @@ function App() {
 
   const getAllTasksFromDB = async () => {
     try {
-      const res = await fetch("http://localhost:3002/");
+      const res = await fetch("https://fullstack-todo-app-api-pi.vercel.app");
       const data = await res.json();
 
       setTodo(data);
@@ -32,7 +32,7 @@ function App() {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:3002/${id}`, {
+    await fetch(`https://fullstack-todo-app-api-pi.vercel.app/${id}`, {
       method: "delete",
     });
     getAllTasksFromDB();
