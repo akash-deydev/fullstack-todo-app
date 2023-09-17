@@ -8,7 +8,7 @@ const port = 3002
 const app = express();
 
 const corsOptions = {
-  origin: 'https://fullstack-todo-app-blue.vercel.app',
+  origin: ['https://fullstack-todo-app-blue.vercel.app'],
   methods: ['GET', 'POST', 'DELETE'],
   credentials: true, // Include cookies in CORS requests if needed
   optionsSuccessStatus: 204, // Return a 204 status code for preflight requests
